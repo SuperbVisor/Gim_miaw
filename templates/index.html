@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Miawpaw</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> <!-- Menambahkan favicon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="{{ url_for('static', filename='music/background-music.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Menampilkan nama pengguna dan tombol logout -->
+    <div id="welcomeMessage">
+        Selamat datang, {{ session['username'] }}!<br>
+        <a href="{{ url_for('logout') }}" class="logoutButton">Logout</a>
+    </div>
+
+    <h1 id="gameTitle">Game Balapan Cihuy</h1>
+    <div id="gameContainer">
+        <div id="gameArea">
+            <div id="playerCar"></div>
+        </div>
+        <div id="scoreboard">
+            <div id="currentScore">Skor Saat Ini: 0</div>
+            <div id="highScore">Skor Tertinggi: 0</div>
+            <div id="gameOverMessage" class="hidden">
+                <h2>Game Over</h2>
+                <button id="restartButton">Mulai Ulang</button>
+                <button id="toggleMusicButton">Matikan Musik</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

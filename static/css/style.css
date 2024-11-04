@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Mengatur posisi relatif untuk body */
+    overflow: hidden; /* Menyembunyikan elemen yang keluar dari halaman */
+    background-color: #f4f4f4; /* Warna latar belakang untuk halaman login */
+}
+
+
+
+#welcomeMessage {
+    position: absolute; /* Mengatur posisi absolut untuk menempatkan di sudut kiri atas */
+    top: 20px; /* Jarak dari atas */
+    left: 20px; /* Jarak dari kiri */
+    color: white; /* Warna teks putih */
+    font-size: 18px; /* Ukuran font */
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    padding: 10px; /* Ruang dalam */
+    border-radius: 5px; /* Sudut melengkung */
+    z-index: 1; /* Memastikan berada di atas elemen lainnya */
+}
+
+.logoutButton {
+    display: inline-block; /* Agar tombol tampil dalam satu baris */
+    margin-top: 5px; /* Jarak atas untuk tombol */
+    padding: 5px 10px; /* Ruang dalam tombol */
+    background-color: #004db1; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-decoration: none; /* Tanpa garis bawah */
+    border-radius: 4px; /* Sudut melengkung */
+    transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+.logoutButton:hover {
+    background-color: #0f5cc2; /* Warna saat hover */
+}
+
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi-transparan */
+    color: white; /* Warna teks putih */
+    padding: 20px; /* Ruang dalam kotak */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Bayangan kotak */
+    width: 300px; /* Lebar kotak */
+    max-width: 90%; /* Batas maksimum lebar */
+}
+
+.form-container h1 {
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+}
+
+.form-container label {
+    margin-bottom: 5px; /* Jarak bawah untuk label */
+    display: block; /* Menampilkan label sebagai blok */
+}
+
+.form-container input {
+    width: calc(100% - 20px); /* Lebar penuh untuk input dengan pengurangan padding */
+    padding: 10px; /* Ruang dalam input */
+    margin-bottom: 15px; /* Jarak bawah untuk input */
+    border: none; /* Tanpa garis tepi */
+    border-radius: 4px; /* Sudut melengkung input */
+    box-sizing: border-box; /* Mengatur perhitungan lebar dan tinggi untuk memasukkan padding */
+}
+
+.form-container button {
+    width: 100%; /* Lebar penuh untuk tombol */
+    padding: 10px; /* Ruang dalam tombol */
+    background-color: #ff4c4c; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Tanpa garis tepi */
+    border-radius: 4px; /* Sudut melengkung tombol */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+.form-container button:hover {
+    background-color: #ff1f1f; /* Warna saat hover */
+}
+
+.flashes {
+    color: yellow; /* Warna pesan flash */
+    margin-top: 10px; /* Jarak atas untuk pesan flash */
+    list-style-type: none; /* Tanpa bullet points */
+    padding: 0; /* Tanpa padding */
+}
+
+#toggleMusicButton {
+    display: inline-block; /* Agar tombol tampil dalam satu baris */
+    margin-top: 10px; /* Jarak atas untuk tombol */
+    margin-left: 5px; /* Jarak kiri untuk memberi ruang antara tombol */
+    padding: 8px 15px; /* Ruang dalam tombol */
+    background-color: #4CAF50; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-decoration: none; /* Tanpa garis bawah */
+    border-radius: 5px; /* Sudut melengkung */
+    border: none; /* Tanpa border */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi saat hover */
+}
+
+#toggleMusicButton:hover {
+    background-color: #45a049; /* Warna saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+
+
+#backgroundVideo {
+    position: absolute; /* Mengatur posisi absolut untuk video */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mengisi lebar penuh */
+    height: 100%; /* Mengisi tinggi penuh */
+    object-fit: cover; /* Menyesuaikan ukuran video agar menutupi seluruh area */
+    z-index: -1; /* Memastikan video berada di belakang konten lainnya */
+}
+
+#gameTitle {
+    color: white; /* Warna tulisan putih */
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    padding: 10px 20px; /* Ruang dalam kotak */
+    border-radius: 8px; /* Sudut melengkung */
+    margin-bottom: 20px; /* Jarak bawah untuk memisahkan judul dari konten lainnya */
+    text-align: center; /* Memusatkan teks */
+}
+
+#gameContainer {
+    display: flex;
+    align-items: flex-start; /* Ubah menjadi flex-start untuk merapikan tata letak */
+    justify-content: center;
+    position: relative; /* Mengatur posisi relatif untuk game container */
+    z-index: 1; /* Memastikan game container berada di atas video */
+}
+
+#gameArea {
+    width: 300px;
+    height: 500px;
+    background-image: url('../images/road.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    margin-right: 20px;
+    animation: roadScroll 2s linear infinite;
+}
+
+#playerCar {
+    width: 70px;
+    height: 100px;
+    background-image: url('../images/player-car.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 10px;
+    left: 125px;
+}
+
+.enemyCar {
+    width: 60px;
+    height: 100px;
+    background-image: url('../images/enemy-car.png');
+    background-size: cover;
+    position: absolute;
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang box skor */
+    padding: 10px; /* Ruang dalam box */
+    border-radius: 8px; /* Sudut melengkung */
+    border: 2px solid #fff; /* Garis tepi */
+}
+
+#currentScore, #highScore {
+    font-size: 18px;
+    color: white; /* Warna teks skor putih */
+    margin: 5px 0;
+}
+
+#gameOverMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px; /* Jarak antara box Game Over dan skor */
+    color: white; /* Warna teks Game Over putih */
+}
+
+button#restartButton {
+    background-color: #5237b4;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px; /* Jarak atas untuk memisahkan tombol dari box Game Over */
+}
+
+button#restartButton:hover {
+    background-color: #ff1f1f;
+    transform: scale(1.05);
+}
+
+button#restartButton:active {
+    background-color: #cc0000;
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animasi scrolling jalan */
+@keyframes roadScroll {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 100%;
+    }
+}
